@@ -1,192 +1,786 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Automation Specialist | Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            500: '#10b981',
-                            600: '#059669',
-                            900: '#064e3b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================= -->
+<!-- SEO — UPDATE [YOUR NAME] AND [YOUR WEBSITE URL] BELOW          -->
+<!-- ============================================================= -->
+<title>[YOUR NAME] | AI Automation Specialist</title>
+<meta name="description" content="AI Automation Specialist building intelligent workflows, AI agents, n8n automations, API integrations, data pipelines, and RAG systems.">
+<meta name="keywords" content="AI automation, n8n, AI agents, LLM, RAG, web scraping, API integration, data pipelines, workflow automation, business process automation">
+<link rel="canonical" href="[YOUR WEBSITE URL]">
+<!-- FAVICON PLACEHOLDER — REPLACE href WITH YOUR FAVICON -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="[YOUR NAME] | AI Automation Specialist">
+<meta property="og:description" content="AI Automation Specialist building intelligent workflows, AI agents, n8n automations, API integrations, data pipelines, and RAG systems.">
+<meta property="og:url" content="[YOUR WEBSITE URL]">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[YOUR NAME] | AI Automation Specialist">
+<meta name="twitter:description" content="AI Automation Specialist building intelligent workflows, AI agents, n8n automations, API integrations, data pipelines, and RAG systems.">
+<!-- JSON-LD Structured Data — UPDATE PLACEHOLDERS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "[YOUR NAME]",
+  "jobTitle": "AI Automation Specialist",
+  "url": "[YOUR WEBSITE URL]",
+  "email": "mailto:[YOUR EMAIL]",
+  "address": { "@type": "PostalAddress", "addressLocality": "[YOUR LOCATION]" },
+  "knowsAbout": ["AI Automation", "n8n", "AI Agents", "LLM Integration", "RAG Systems", "Web Scraping", "API Integration", "Data Pipelines"]
+}
+</script>
+
+<!-- CDN Resources -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- ============================================================= -->
+<!-- PERSONAL INFORMATION AND SITE CONFIGURATION — UPDATE THESE VALUES -->
+<!-- Replace every [BRACKETED] placeholder. Values left as          -->
+<!-- placeholders are detected and handled gracefully by the site.  -->
+<!-- ============================================================= -->
+<script>
+  window.SITE_CONFIG = {
+    name: "[YOUR NAME]",
+    location: "[YOUR LOCATION]",
+    email: "[YOUR EMAIL]",
+    githubUrl: "[YOUR GITHUB URL]",
+    linkedinUrl: "[YOUR LINKEDIN URL]",
+    xUrl: "[YOUR X URL]",
+    profilePhotoUrl: "[YOUR PROFILE PHOTO URL]",
+    calendlyUrl: "[YOUR CALENDLY URL OR BOOKING LINK]",
+    websiteUrl: "[YOUR WEBSITE URL]"
+  };
+
+  <!-- PASTE YOUR N8N WEBHOOK POST URL HERE -->
+  // Paste your n8n webhook POST URL between the quotes below.
+  // Leave empty ("") to disable form submission safely.
+  window.N8N_WEBHOOK_URL = "";
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; background-color: #020617; }
+  .grid-bg {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16,185,129,0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 60%, rgba(6,182,212,0.05), transparent),
+      linear-gradient(rgba(148,163,184,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  }
+  .glass { background: rgba(15,23,42,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .grad-text { background: linear-gradient(90deg, #10b981, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .grad-btn { background: linear-gradient(90deg, #10b981, #06b6d4); transition: box-shadow .3s, transform .3s; }
+  .grad-btn:hover { box-shadow: 0 0 28px rgba(16,185,129,0.45); transform: translateY(-2px); }
+  .card-lift { transition: transform .3s, border-color .3s, box-shadow .3s; }
+  .card-lift:hover { transform: translateY(-4px); border-color: rgba(16,185,129,0.4); box-shadow: 0 8px 32px rgba(6,182,212,0.12); }
+  .node-pulse { animation: nodepulse 2.4s ease-in-out infinite; }
+  @keyframes nodepulse { 0%,100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.25);} 50% { box-shadow: 0 0 16px 3px rgba(16,185,129,0.25);} }
+  .status-dot { animation: dotpulse 2s ease-in-out infinite; }
+  @keyframes dotpulse { 0%,100% { opacity: 1;} 50% { opacity: .45;} }
+  .fade-up { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  input[type=range] { accent-color: #10b981; }
+  :focus-visible { outline: 2px solid #06b6d4; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    .fade-up { opacity: 1; transform: none; }
+  }
+</style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
 
-    <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-brand-500 animate-pulse"></span>
-                <span>AI Automation<span class="text-brand-500">.</span></span>
-            </a>
-            <div class="hidden sm:flex gap-6 md:gap-8 text-sm font-medium text-slate-400">
-                <a href="#about" class="hover:text-brand-500 transition-colors">About</a>
-                <a href="#stack" class="hover:text-brand-500 transition-colors">Tech Stack</a>
-                <a href="#projects" class="hover:text-brand-500 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
-            </div>
-            <a href="#contact" class="px-4 py-2 text-xs font-semibold rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all">
-                Hire Me
-            </a>
-        </div>
-    </nav>
+<body class="bg-slate-950 text-slate-300 antialiased grid-bg overflow-x-hidden" x-data="siteApp()" x-init="init()" :class="modal ? 'overflow-hidden' : ''" @keydown.escape.window="closeModal()">
 
-    <!-- Hero Section -->
-    <section id="about" class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-center text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/40 border border-brand-500/30 text-brand-500 text-xs font-medium mb-6">
-            <i class="fa-solid fa-bolt"></i> Building Autonomous Workflows & AI Agents
-        </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-3xl leading-tight">
-            Connecting Systems with <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-emerald-300">Smart AI Automation</span>
+<!-- ================= NAVIGATION ================= -->
+<header class="fixed top-0 inset-x-0 z-50 px-3 sm:px-6 pt-3" x-data="{ open: false }">
+  <nav class="max-w-6xl mx-auto glass rounded-2xl border transition-all duration-300" :class="scrolled ? 'border-slate-700 shadow-lg shadow-emerald-500/5' : 'border-slate-800'" aria-label="Main navigation">
+    <div class="flex items-center justify-between px-4 sm:px-6 py-3">
+      <a href="#top" class="flex items-center gap-3 group">
+        <span class="w-9 h-9 rounded-xl grad-btn flex items-center justify-center text-slate-950 font-extrabold text-sm" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+        <span class="flex flex-col leading-tight">
+          <span class="font-bold text-white text-sm sm:text-base" x-text="cfg.name">[YOUR NAME]</span>
+          <span class="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot" aria-hidden="true"></span>
+            Available for AI Automation Projects
+          </span>
+        </span>
+      </a>
+      <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <li><a href="#about" class="hover:text-emerald-400 transition-colors">About</a></li>
+        <li><a href="#services" class="hover:text-emerald-400 transition-colors">Services</a></li>
+        <li><a href="#tech-stack" class="hover:text-emerald-400 transition-colors">Tech Stack</a></li>
+        <li><a href="#case-studies" class="hover:text-emerald-400 transition-colors">Case Studies</a></li>
+        <li><a href="#process" class="hover:text-emerald-400 transition-colors">Process</a></li>
+        <li><a href="#roi-calculator" class="hover:text-emerald-400 transition-colors">ROI Calculator</a></li>
+        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden lg:inline-flex grad-btn text-slate-950 font-semibold text-sm px-5 py-2.5 rounded-xl">Start a Project</a>
+        <button class="lg:hidden w-10 h-10 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-white" @click="open = !open" :aria-expanded="open" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+          <i class="fa-solid" :class="open ? 'fa-xmark' : 'fa-bars'" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden px-4 pb-4" x-show="open" x-transition.opacity.duration.200ms x-cloak>
+      <ul class="flex flex-col gap-1 text-sm font-medium border-t border-slate-800 pt-3">
+        <li><a href="#about" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/60 hover:text-emerald-400" @click="open = false">About</a></li>
+        <li><a href="#services" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/60 hover:text-emerald-400" @click="open = false">Services</a></li>
+        <li><a href="#tech-stack" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/60 hover:text-emerald-400" @click="open = false">Tech Stack</a></li>
+        <li><a href="#case-studies" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/60 hover:text-emerald-400" @click="open = false">Case Studies</a></li>
+        <li><a href="#process" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/60 hover:text-emerald-400" @click="open = false">Process</a></li>
+        <li><a href="#roi-calculator" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/60 hover:text-emerald-400" @click="open = false">ROI Calculator</a></li>
+        <li><a href="#contact" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/60 hover:text-emerald-400" @click="open = false">Contact</a></li>
+        <li class="pt-2"><a href="#contact" class="grad-btn block text-center text-slate-950 font-semibold px-5 py-3 rounded-xl" @click="open = false">Start a Project</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="pt-32 sm:pt-40 pb-16 sm:pb-24 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-up">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot" aria-hidden="true"></span>
+          Available for AI Automation Projects
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-6">
+          I Build <span class="grad-text">AI Automation Systems</span> That Eliminate Repetitive Work.
         </h1>
-        <p class="mt-6 text-slate-400 max-w-2xl text-base md:text-lg">
-            I build end-to-end automated pipelines using <strong>n8n</strong>, <strong>Python</strong>, and <strong>LLM APIs</strong> to eliminate manual work and scale business speed.
+        <p class="text-base sm:text-lg text-slate-400 leading-relaxed mb-4">
+          I design and build intelligent automation systems that connect your tools, automate repetitive processes, and turn manual workflows into scalable AI-powered operations.
         </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a href="#projects" class="px-6 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-brand-500/20">
-                View My Projects
-            </a>
-            <a href="#contact" class="px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-semibold text-sm border border-slate-800 transition-all">
-                Get In Touch
-            </a>
+        <p class="text-sm text-slate-500 mb-8">
+          From <strong class="text-slate-300">n8n</strong> workflows and <strong class="text-slate-300">Python</strong> pipelines to <strong class="text-slate-300">LLMs</strong>, <strong class="text-slate-300">AI agents</strong>, <strong class="text-slate-300">APIs</strong>, <strong class="text-slate-300">web scraping</strong>, <strong class="text-slate-300">RAG</strong>, and <strong class="text-slate-300">cloud infrastructure</strong>.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <a href="#contact" class="grad-btn text-slate-950 font-semibold px-6 py-3.5 rounded-xl text-sm sm:text-base">Start an Automation Project</a>
+          <a href="#case-studies" class="border border-slate-700 hover:border-emerald-500/50 bg-slate-900/50 text-white font-semibold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-colors">Explore My Work</a>
+          <a :href="cfg.calendlyUrl" x-show="isConfigured(cfg.calendlyUrl)" x-cloak target="_blank" rel="noopener" class="border border-slate-800 hover:border-cyan-500/50 text-slate-300 font-semibold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-colors"><i class="fa-regular fa-calendar mr-2" aria-hidden="true"></i>Book a Call</a>
         </div>
-    </section>
+        <p class="text-xs sm:text-sm text-slate-500 font-medium tracking-wide">n8n · Python · OpenAI · Claude · APIs · RAG · AWS</p>
+      </div>
 
-    <!-- Tech Stack -->
-    <section id="stack" class="py-16 border-y border-slate-900 bg-slate-900/30">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-xs uppercase font-semibold text-slate-500 tracking-wider text-center mb-8">My Automation Stack</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
-                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800/60">
-                    <i class="fa-solid fa-diagram-project text-brand-500 text-2xl mb-2"></i>
-                    <p class="text-sm font-semibold">n8n Workflow</p>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800/60">
-                    <i class="fa-brands fa-python text-brand-500 text-2xl mb-2"></i>
-                    <p class="text-sm font-semibold">Python</p>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800/60">
-                    <i class="fa-solid fa-robot text-brand-500 text-2xl mb-2"></i>
-                    <p class="text-sm font-semibold">OpenAI / Claude</p>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800/60">
-                    <i class="fa-brands fa-aws text-brand-500 text-2xl mb-2"></i>
-                    <p class="text-sm font-semibold">AWS / Cloud</p>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800/60">
-                    <i class="fa-solid fa-plug text-brand-500 text-2xl mb-2"></i>
-                    <p class="text-sm font-semibold">REST Webhooks</p>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800/60">
-                    <i class="fa-solid fa-database text-brand-500 text-2xl mb-2"></i>
-                    <p class="text-sm font-semibold">Vector DBs</p>
-                </div>
+      <!-- HERO VISUAL: AI automation architecture -->
+      <div class="fade-up" aria-hidden="true">
+        <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 sm:p-6 backdrop-blur">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500/60"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/60"></span>
+            <span class="ml-3 text-xs text-slate-500 font-mono">automation-pipeline.workflow</span>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="node-pulse flex-1 min-w-0 bg-slate-900 border border-emerald-500/30 rounded-xl px-4 py-3 flex items-center gap-3">
+                <i class="fa-solid fa-tower-broadcast text-emerald-400"></i>
+                <div class="min-w-0"><p class="text-white text-sm font-semibold truncate">Trigger</p><p class="text-xs text-slate-500 truncate">Webhook · Gmail · Schedule</p></div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white">Featured AI Workflows</h2>
-            <p class="text-slate-400 mt-2 text-sm">Real-world automation systems designed for efficiency and scale.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-brand-500/50 transition-all group">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center mb-4 group-hover:bg-brand-500 group-hover:text-slate-950 transition-all">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Autonomous Customer Support Bot</h3>
-                    <p class="text-slate-400 text-sm mt-2">Integrated an n8n webhook workflow with OpenAI to answer support tickets via Gmail, pulling context from a vector database.</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-800/60 flex flex-wrap gap-2">
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">n8n</span>
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">OpenAI</span>
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">AWS</span>
-                </div>
+            <div class="pl-6 text-slate-600"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="flex items-center gap-3">
+              <div class="flex-1 min-w-0 bg-slate-900 border border-cyan-500/30 rounded-xl px-4 py-3 flex items-center gap-3">
+                <i class="fa-solid fa-robot text-cyan-400"></i>
+                <div class="min-w-0"><p class="text-white text-sm font-semibold truncate">AI Agent</p><p class="text-xs text-slate-500 truncate">LLM · Intent Classification</p></div>
+              </div>
+              <div class="hidden sm:block flex-1 min-w-0 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 flex items-center gap-3">
+                <div class="flex items-center gap-3"><i class="fa-solid fa-database text-emerald-400"></i>
+                <div class="min-w-0"><p class="text-white text-sm font-semibold truncate">Data Processing</p><p class="text-xs text-slate-500 truncate">Vector DB · Enrichment</p></div></div>
+              </div>
             </div>
-
-            <!-- Project 2 -->
-            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-brand-500/50 transition-all group">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center mb-4 group-hover:bg-brand-500 group-hover:text-slate-950 transition-all">
-                        <i class="fa-solid fa-filter"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Lead Scraping & Qualification Pipeline</h3>
-                    <p class="text-slate-400 text-sm mt-2">Automated web scraping pipeline that extracts company info, uses AI to grade leads, and pushes updates straight to Google Sheets and Slack.</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-800/60 flex flex-wrap gap-2">
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">Python</span>
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">n8n</span>
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">Slack API</span>
-                </div>
+            <div class="pl-6 text-slate-600"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="flex items-center gap-3">
+              <div class="flex-1 min-w-0 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 flex items-center gap-3">
+                <i class="fa-solid fa-code-branch text-cyan-400"></i>
+                <div class="min-w-0"><p class="text-white text-sm font-semibold truncate">Decision</p><p class="text-xs text-slate-500 truncate">Route · Escalate · Approve</p></div>
+              </div>
             </div>
-
-            <!-- Project 3 -->
-            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-brand-500/50 transition-all group">
-                <div>
-                    <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center mb-4 group-hover:bg-brand-500 group-hover:text-slate-950 transition-all">
-                        <i class="fa-solid fa-book-open"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">RAG Knowledge Base & Notion Sync</h3>
-                    <p class="text-slate-400 text-sm mt-2">Converts multi-page PDFs and transcripts into embeddings and syncs research directly into Notion databases.</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-800/60 flex flex-wrap gap-2">
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">Pinecone</span>
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">Notion API</span>
-                    <span class="text-[10px] uppercase tracking-wide px-2 py-1 bg-slate-800 rounded text-slate-300">FastAPI</span>
-                </div>
+            <div class="pl-6 text-slate-600"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="grid grid-cols-3 gap-3">
+              <div class="bg-slate-900 border border-slate-800 rounded-xl px-2 py-3 text-center">
+                <i class="fa-brands fa-slack text-emerald-400 mb-1 block"></i><p class="text-[11px] text-slate-400">Slack</p>
+              </div>
+              <div class="bg-slate-900 border border-slate-800 rounded-xl px-2 py-3 text-center">
+                <i class="fa-solid fa-envelope text-cyan-400 mb-1 block"></i><p class="text-[11px] text-slate-400">Gmail</p>
+              </div>
+              <div class="bg-slate-900 border border-slate-800 rounded-xl px-2 py-3 text-center">
+                <i class="fa-solid fa-address-book text-emerald-400 mb-1 block"></i><p class="text-[11px] text-slate-400">CRM</p>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-20 border-t border-slate-900 bg-slate-900/20">
-        <div class="max-w-xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-white">Let's Work Together</h2>
-            <p class="text-slate-400 mt-2 text-sm">Need to automate repetitive tasks or build custom AI tools? Drop a message!</p>
+<!-- ================= VALUE / CAPABILITIES ================= -->
+<section class="py-14 px-4 sm:px-6 border-y border-slate-800/60 bg-slate-900/30" aria-label="Automation capabilities">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 fade-up">
+      <div class="text-center"><p class="text-3xl font-extrabold grad-text mb-1">24/7</p><p class="text-sm text-slate-400">Automated execution</p></div>
+      <div class="text-center"><p class="text-3xl font-extrabold grad-text mb-1">1 Workflow</p><p class="text-sm text-slate-400">Multiple tools connected</p></div>
+      <div class="text-center"><p class="text-3xl font-extrabold grad-text mb-1">AI-Powered</p><p class="text-sm text-slate-400">Intelligent decision making</p></div>
+      <div class="text-center"><p class="text-3xl font-extrabold grad-text mb-1">Scalable</p><p class="text-sm text-slate-400">Built to grow with your business</p></div>
+    </div>
+    <p class="text-center text-xs text-slate-600 mt-6">These describe what automation systems are capable of — not guaranteed results for any specific business.</p>
+  </div>
+</section>
 
-            <form action="YOUR_N8N_WEBHOOK_URL_HERE" method="POST" class="mt-8 text-left space-y-4" onsubmit="event.preventDefault(); alert('Message submitted! Connect this form to your n8n webhook.');">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Your Name</label>
-                    <input type="text" name="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Your Email</label>
-                    <input type="email" name="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Message / Automation Details</label>
-                    <textarea name="message" required rows="4" placeholder="Tell me about your project..." class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 text-sm"></textarea>
-                </div>
-                <button type="submit" class="w-full py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-brand-500/20">
-                    Send Message
-                </button>
-            </form>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-20 sm:py-28 px-4 sm:px-6">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-[auto,1fr] gap-10 items-center fade-up">
+    <div class="mx-auto">
+      <template x-if="isConfigured(cfg.profilePhotoUrl)">
+        <img :src="cfg.profilePhotoUrl" :alt="'Portrait of ' + cfg.name" loading="lazy" width="192" height="192" class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover border-2 border-emerald-500/40 shadow-lg shadow-emerald-500/10">
+      </template>
+      <template x-if="!isConfigured(cfg.profilePhotoUrl)">
+        <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center" role="img" aria-label="Profile photo placeholder">
+          <i class="fa-solid fa-user text-5xl text-slate-600" aria-hidden="true"></i>
         </div>
-    </section>
+      </template>
+    </div>
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-5">About Me</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">
+        I'm an <strong class="text-white">AI Automation Specialist</strong> focused on building practical systems that solve real business problems. I don't just use AI tools — I design, build, integrate, and deploy complete automation systems that remove repetitive work from your team's day.
+      </p>
+      <p class="text-slate-400 leading-relaxed mb-6">
+        My work combines <strong class="text-slate-200">automation engineering</strong>, <strong class="text-slate-200">AI/LLM integration</strong>, <strong class="text-slate-200">workflow orchestration</strong>, <strong class="text-slate-200">APIs</strong>, <strong class="text-slate-200">data processing</strong>, and <strong class="text-slate-200">cloud technologies</strong> into reliable systems tailored to how your business actually operates.
+      </p>
+      <a href="#contact" class="grad-btn inline-block text-slate-950 font-semibold px-6 py-3 rounded-xl text-sm">Let's Build Something</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="py-8 text-center text-xs text-slate-600 border-t border-slate-900">
-        <p>© 2026 AI Automation Specialist. Built for speed & reliability.</p>
-    </footer>
+<!-- ================= WHAT I AUTOMATE ================= -->
+<section class="py-20 px-4 sm:px-6 bg-slate-900/30 border-y border-slate-800/60">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight text-center mb-3 fade-up">What I Automate</h2>
+    <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 fade-up">If a process is repetitive, rule-based, or data-heavy — it can probably be automated.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6"><i class="fa-solid fa-headset text-2xl text-emerald-400 mb-4" aria-hidden="true"></i><h3 class="text-white font-bold mb-2">Customer Support</h3><p class="text-sm text-slate-400">AI-assisted triage, intent classification, knowledge retrieval, and drafted responses with human oversight.</p></div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6"><i class="fa-solid fa-magnet text-2xl text-cyan-400 mb-4" aria-hidden="true"></i><h3 class="text-white font-bold mb-2">Lead Generation</h3><p class="text-sm text-slate-400">Automated lead capture, enrichment, qualification, and routing into your CRM and sales channels.</p></div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6"><i class="fa-solid fa-keyboard text-2xl text-emerald-400 mb-4" aria-hidden="true"></i><h3 class="text-white font-bold mb-2">Data Entry & Processing</h3><p class="text-sm text-slate-400">Extract, validate, transform, and sync data between systems — without manual copy-paste.</p></div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6"><i class="fa-solid fa-spider text-2xl text-cyan-400 mb-4" aria-hidden="true"></i><h3 class="text-white font-bold mb-2">Web Scraping & Data Pipelines</h3><p class="text-sm text-slate-400">Structured data collection, cleaning, and delivery pipelines that keep your datasets fresh.</p></div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6"><i class="fa-solid fa-robot text-2xl text-emerald-400 mb-4" aria-hidden="true"></i><h3 class="text-white font-bold mb-2">AI Agents</h3><p class="text-sm text-slate-400">Autonomous and semi-autonomous agents that reason, use tools, and complete multi-step tasks.</p></div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6"><i class="fa-solid fa-diagram-project text-2xl text-cyan-400 mb-4" aria-hidden="true"></i><h3 class="text-white font-bold mb-2">Internal Business Workflows</h3><p class="text-sm text-slate-400">Approvals, reporting, notifications, and operations glue between the tools your team already uses.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<!-- SERVICES — EDIT SERVICE OFFERINGS HERE -->
+<section id="services" class="py-20 sm:py-28 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight text-center mb-3 fade-up">Services</h2>
+    <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 fade-up">End-to-end automation engineering — from a single workflow to a complete AI-powered system.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
+        <i class="fa-solid fa-gears text-2xl text-emerald-400 mb-4" aria-hidden="true"></i>
+        <h3 class="text-white font-bold mb-2">AI Workflow Automation</h3>
+        <p class="text-sm text-slate-400 mb-3">Intelligent workflows that combine business logic with AI decision-making to handle end-to-end processes.</p>
+        <p class="text-xs text-slate-500"><span class="text-emerald-400 font-semibold">Example:</span> Incoming documents classified by an LLM, routed for approval, and filed automatically.</p>
+      </div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
+        <i class="fa-solid fa-brain text-2xl text-cyan-400 mb-4" aria-hidden="true"></i>
+        <h3 class="text-white font-bold mb-2">AI Agents & LLM Systems</h3>
+        <p class="text-sm text-slate-400 mb-3">Custom agents built on OpenAI, Claude, and other LLM APIs that reason, use tools, and take action.</p>
+        <p class="text-xs text-slate-500"><span class="text-emerald-400 font-semibold">Example:</span> A research agent that gathers data, summarizes findings, and posts a briefing to Slack.</p>
+      </div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
+        <i class="fa-solid fa-circle-nodes text-2xl text-emerald-400 mb-4" aria-hidden="true"></i>
+        <h3 class="text-white font-bold mb-2">n8n Automation Development</h3>
+        <p class="text-sm text-slate-400 mb-3">Production-grade n8n workflows with error handling, retries, logging, and clean architecture.</p>
+        <p class="text-xs text-slate-500"><span class="text-emerald-400 font-semibold">Example:</span> A multi-branch n8n workflow syncing orders between an e-commerce platform, sheets, and email.</p>
+      </div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
+        <i class="fa-solid fa-spider text-2xl text-cyan-400 mb-4" aria-hidden="true"></i>
+        <h3 class="text-white font-bold mb-2">Web Scraping & Data Pipelines</h3>
+        <p class="text-sm text-slate-400 mb-3">Python-based scrapers and ETL pipelines that collect, clean, and deliver structured data reliably.</p>
+        <p class="text-xs text-slate-500"><span class="text-emerald-400 font-semibold">Example:</span> Daily competitor pricing collected, normalized, and delivered to a dashboard.</p>
+      </div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
+        <i class="fa-solid fa-plug text-2xl text-emerald-400 mb-4" aria-hidden="true"></i>
+        <h3 class="text-white font-bold mb-2">API & SaaS Integrations</h3>
+        <p class="text-sm text-slate-400 mb-3">Connect the tools you already use — CRMs, email, sheets, databases — with REST APIs, OAuth, and webhooks.</p>
+        <p class="text-xs text-slate-500"><span class="text-emerald-400 font-semibold">Example:</span> New CRM deals automatically create invoices, folders, and kickoff notifications.</p>
+      </div>
+      <div class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
+        <i class="fa-solid fa-book-open text-2xl text-cyan-400 mb-4" aria-hidden="true"></i>
+        <h3 class="text-white font-bold mb-2">RAG & Knowledge Systems</h3>
+        <p class="text-sm text-slate-400 mb-3">Retrieval-augmented generation systems that let AI answer questions from your own documentation and data.</p>
+        <p class="text-xs text-slate-500"><span class="text-emerald-400 font-semibold">Example:</span> An internal assistant that answers policy questions from your company wiki with citations.</p>
+      </div>
+    </div>
+    <div class="text-center mt-10 fade-up">
+      <a href="#contact" class="grad-btn inline-block text-slate-950 font-semibold px-6 py-3 rounded-xl text-sm">Start an Automation Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TECH STACK ================= -->
+<!-- TECH STACK — EDIT TECHNOLOGIES HERE -->
+<section id="tech-stack" class="py-20 px-4 sm:px-6 bg-slate-900/30 border-y border-slate-800/60">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight text-center mb-3 fade-up">Tech Stack</h2>
+    <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 fade-up">The tools and technologies I work with to build automation systems.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <template x-for="cat in techStack" :key="cat.name">
+        <div class="fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6 visible">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4" x-text="cat.name"></h3>
+          <ul class="space-y-3">
+            <template x-for="t in cat.items" :key="t.name">
+              <li class="flex items-start gap-3 rounded-lg p-2 -m-2 transition-shadow duration-300 hover:shadow-[0_0_16px_rgba(16,185,129,0.15)] hover:bg-slate-800/40">
+                <i :class="t.icon + ' text-cyan-400 mt-0.5 w-5 text-center'" aria-hidden="true"></i>
+                <div><p class="text-sm font-semibold text-white" x-text="t.name"></p><p class="text-xs text-slate-500" x-text="t.desc"></p></div>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASE STUDIES ================= -->
+<!-- CASE STUDIES — CONCEPT PROJECTS / REPLACE WITH REAL PROJECTS WHEN AVAILABLE -->
+<section id="case-studies" class="py-20 sm:py-28 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight text-center mb-3 fade-up">Case Studies</h2>
+    <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 fade-up">Detailed automation system designs. These are concept and prototype builds — clearly labeled — that demonstrate how I architect real solutions.</p>
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- CASE STUDY 1 — CONCEPT PROJECT / REPLACE WITH REAL PROJECT -->
+      <article class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6 flex flex-col">
+        <span class="self-start text-[11px] font-bold uppercase tracking-wider text-cyan-300 bg-cyan-500/10 border border-cyan-500/25 rounded-full px-3 py-1 mb-4">Concept Project</span>
+        <h3 class="text-lg font-bold text-white mb-3">Autonomous AI Customer Support Agent</h3>
+        <p class="text-sm text-slate-400 mb-2"><span class="text-emerald-400 font-semibold">Problem:</span> Support requests require manual classification and repetitive responses.</p>
+        <p class="text-sm text-slate-400 mb-4"><span class="text-emerald-400 font-semibold">Solution:</span> An AI workflow receives support requests, classifies intent, retrieves relevant knowledge, generates responses, and escalates complex cases.</p>
+        <p class="text-xs text-slate-500 font-mono mb-4 leading-relaxed">Incoming Email → Webhook / Trigger → LLM Intent Classifier → Vector Knowledge Search → AI Response → Human Approval → Gmail Reply</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">n8n</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">OpenAI</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">Vector Search</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">Gmail</span>
+        </div>
+        <p class="text-xs text-emerald-300/80 mb-5"><i class="fa-solid fa-bullseye mr-1" aria-hidden="true"></i>Designed to reduce repetitive support handling</p>
+        <button class="mt-auto border border-slate-700 hover:border-emerald-500/50 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors" @click="openModal(1)">View Workflow Logic</button>
+      </article>
+      <!-- END CASE STUDY 1 -->
+
+      <!-- CASE STUDY 2 — AUTOMATION PROTOTYPE / REPLACE WITH REAL PROJECT -->
+      <article class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6 flex flex-col">
+        <span class="self-start text-[11px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 rounded-full px-3 py-1 mb-4">Automation Prototype</span>
+        <h3 class="text-lg font-bold text-white mb-3">Automated B2B Lead Enrichment & Data Pipeline</h3>
+        <p class="text-sm text-slate-400 mb-2"><span class="text-emerald-400 font-semibold">Problem:</span> Sales teams spend time manually collecting and organizing lead information.</p>
+        <p class="text-sm text-slate-400 mb-4"><span class="text-emerald-400 font-semibold">Solution:</span> A workflow collects leads, enriches data, validates information, structures records, and sends qualified leads to the appropriate channel.</p>
+        <p class="text-xs text-slate-500 font-mono mb-4 leading-relaxed">Lead Source → Python Scraper → Data Cleaning → Enrichment → Lead Qualification → Google Sheets → Slack Alert</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">Python</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">n8n</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">Slack</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">Google Sheets</span>
+        </div>
+        <p class="text-xs text-emerald-300/80 mb-5"><i class="fa-solid fa-bullseye mr-1" aria-hidden="true"></i>Designed to automate repetitive lead research</p>
+        <button class="mt-auto border border-slate-700 hover:border-emerald-500/50 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors" @click="openModal(2)">View Workflow Logic</button>
+      </article>
+      <!-- END CASE STUDY 2 -->
+
+      <!-- CASE STUDY 3 — PROOF OF CONCEPT / REPLACE WITH REAL PROJECT -->
+      <article class="card-lift fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6 flex flex-col">
+        <span class="self-start text-[11px] font-bold uppercase tracking-wider text-cyan-300 bg-cyan-500/10 border border-cyan-500/25 rounded-full px-3 py-1 mb-4">Proof of Concept</span>
+        <h3 class="text-lg font-bold text-white mb-3">Enterprise RAG Knowledge Base Sync</h3>
+        <p class="text-sm text-slate-400 mb-2"><span class="text-emerald-400 font-semibold">Problem:</span> Company knowledge becomes outdated across multiple systems.</p>
+        <p class="text-sm text-slate-400 mb-4"><span class="text-emerald-400 font-semibold">Solution:</span> A synchronization pipeline retrieves updated documentation, processes content, generates embeddings, and updates a vector database for AI retrieval.</p>
+        <p class="text-xs text-slate-500 font-mono mb-4 leading-relaxed">Notion → API Sync → Document Processing → Embedding Generation → Pinecone → RAG Retrieval → AI Assistant</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">FastAPI</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">Pinecone</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">Notion API</span>
+          <span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1">LLM</span>
+        </div>
+        <p class="text-xs text-emerald-300/80 mb-5"><i class="fa-solid fa-bullseye mr-1" aria-hidden="true"></i>Designed for continuously updated AI knowledge systems</p>
+        <button class="mt-auto border border-slate-700 hover:border-emerald-500/50 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors" @click="openModal(3)">View Workflow Logic</button>
+      </article>
+      <!-- END CASE STUDY 3 -->
+
+    </div>
+    <div class="text-center mt-10 fade-up">
+      <a href="#contact" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm">Want a system like these built for your business? Let's Automate This <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY MODALS -->
+<template x-for="cs in caseStudies" :key="cs.id">
+  <div x-show="modal === cs.id" x-cloak x-transition.opacity.duration.200ms class="fixed inset-0 z-[60] flex items-center justify-center p-4" role="dialog" aria-modal="true" :aria-label="cs.title" @click.self="closeModal()">
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" @click="closeModal()" aria-hidden="true"></div>
+    <div class="relative glass border border-slate-700 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8">
+      <button class="absolute top-4 right-4 w-10 h-10 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 hover:text-white flex items-center justify-center" @click="closeModal()" aria-label="Close dialog">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-cyan-300 bg-cyan-500/10 border border-cyan-500/25 rounded-full px-3 py-1 mb-4" x-text="cs.label"></span>
+      <h3 class="text-xl sm:text-2xl font-extrabold text-white mb-4 pr-10" x-text="cs.title"></h3>
+      <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">Problem</h4>
+      <p class="text-sm text-slate-400 mb-4" x-text="cs.problem"></p>
+      <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">Solution</h4>
+      <p class="text-sm text-slate-400 mb-4" x-text="cs.solution"></p>
+      <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">Architecture</h4>
+      <p class="text-xs text-slate-500 font-mono mb-4 leading-relaxed" x-text="cs.architecture"></p>
+      <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-2">Workflow Steps</h4>
+      <ol class="list-decimal list-inside text-sm text-slate-400 space-y-1 mb-4">
+        <template x-for="(step, i) in cs.steps" :key="i"><li x-text="step"></li></template>
+      </ol>
+      <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-2">Tech Stack</h4>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <template x-for="t in cs.stack" :key="t"><span class="text-[11px] bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1" x-text="t"></span></template>
+      </div>
+      <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-2">Example Workflow Definition (Illustrative JSON)</h4>
+      <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs overflow-x-auto mb-4 font-mono leading-relaxed" x-html="cs.jsonHtml"></pre>
+      <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">Detailed Breakdown</h4>
+      <p class="text-sm text-slate-400" x-text="cs.breakdown"></p>
+    </div>
+  </div>
+</template>
+
+<!-- ================= PROCESS ================= -->
+<section id="process" class="py-20 px-4 sm:px-6 bg-slate-900/30 border-y border-slate-800/60">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight text-center mb-3 fade-up">How I Work</h2>
+    <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 fade-up">A structured process from manual chaos to reliable automation.</p>
+    <ol class="grid md:grid-cols-4 gap-6 relative">
+      <div class="hidden md:block absolute top-7 left-[12%] right-[12%] h-px bg-gradient-to-r from-emerald-500/40 via-cyan-500/40 to-emerald-500/40" aria-hidden="true"></div>
+      <li class="fade-up relative flex md:flex-col items-start md:items-center gap-4 md:text-center">
+        <span class="w-14 h-14 shrink-0 rounded-2xl grad-btn text-slate-950 font-extrabold flex items-center justify-center relative z-10">01</span>
+        <div><h3 class="text-white font-bold mb-1">Discover</h3><p class="text-sm text-slate-400">Understand the manual process and business objective.</p></div>
+      </li>
+      <li class="fade-up relative flex md:flex-col items-start md:items-center gap-4 md:text-center">
+        <span class="w-14 h-14 shrink-0 rounded-2xl grad-btn text-slate-950 font-extrabold flex items-center justify-center relative z-10">02</span>
+        <div><h3 class="text-white font-bold mb-1">Design</h3><p class="text-sm text-slate-400">Map the workflow and identify AI and automation opportunities.</p></div>
+      </li>
+      <li class="fade-up relative flex md:flex-col items-start md:items-center gap-4 md:text-center">
+        <span class="w-14 h-14 shrink-0 rounded-2xl grad-btn text-slate-950 font-extrabold flex items-center justify-center relative z-10">03</span>
+        <div><h3 class="text-white font-bold mb-1">Build</h3><p class="text-sm text-slate-400">Develop automation, integrations, AI logic, and error handling.</p></div>
+      </li>
+      <li class="fade-up relative flex md:flex-col items-start md:items-center gap-4 md:text-center">
+        <span class="w-14 h-14 shrink-0 rounded-2xl grad-btn text-slate-950 font-extrabold flex items-center justify-center relative z-10">04</span>
+        <div><h3 class="text-white font-bold mb-1">Deploy & Improve</h3><p class="text-sm text-slate-400">Deploy the system, monitor performance, and continuously improve it.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= ROI CALCULATOR ================= -->
+<section id="roi-calculator" class="py-20 sm:py-28 px-4 sm:px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight text-center mb-3 fade-up">How Much Could Automation Save?</h2>
+    <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 fade-up">Adjust the sliders to estimate the potential impact of automating one manual process.</p>
+    <div class="fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 grid md:grid-cols-2 gap-8">
+      <div class="space-y-7">
+        <div>
+          <label for="roi-hours" class="flex justify-between text-sm font-semibold text-white mb-2">
+            <span>Manual hours per week</span><span class="text-emerald-400" x-text="roi.hours + ' hrs'"></span>
+          </label>
+          <input id="roi-hours" type="range" min="1" max="40" step="1" x-model.number="roi.hours" class="w-full">
+        </div>
+        <div>
+          <label for="roi-rate" class="flex justify-between text-sm font-semibold text-white mb-2">
+            <span>Estimated hourly labor cost</span><span class="text-emerald-400" x-text="fmtCurrency(roi.rate)"></span>
+          </label>
+          <input id="roi-rate" type="range" min="5" max="200" step="5" x-model.number="roi.rate" class="w-full">
+        </div>
+        <div>
+          <label for="roi-eff" class="flex justify-between text-sm font-semibold text-white mb-2">
+            <span>Estimated automation efficiency</span><span class="text-emerald-400" x-text="roi.eff + '%'"></span>
+          </label>
+          <input id="roi-eff" type="range" min="50" max="95" step="5" x-model.number="roi.eff" class="w-full">
+        </div>
+      </div>
+      <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-6 flex flex-col justify-center">
+        <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-4">Estimated Potential Savings</h3>
+        <dl class="space-y-3 text-sm">
+          <div class="flex justify-between"><dt class="text-slate-400">Weekly hours saved</dt><dd class="text-white font-bold transition-all" x-text="roiWeeklyHours().toFixed(1) + ' hrs'"></dd></div>
+          <div class="flex justify-between"><dt class="text-slate-400">Annual hours saved</dt><dd class="text-white font-bold transition-all" x-text="Math.round(roiAnnualHours()).toLocaleString('en-US') + ' hrs'"></dd></div>
+          <div class="flex justify-between"><dt class="text-slate-400">Monthly savings</dt><dd class="text-white font-bold transition-all" x-text="fmtCurrency(roiAnnualSavings() / 12)"></dd></div>
+          <div class="flex justify-between border-t border-slate-800 pt-3"><dt class="text-slate-300 font-semibold">Annual labor cost savings</dt><dd class="text-2xl font-extrabold grad-text transition-all" x-text="fmtCurrency(roiAnnualSavings())"></dd></div>
+        </dl>
+        <a href="#contact" class="grad-btn text-center text-slate-950 font-semibold px-5 py-3 rounded-xl text-sm mt-6">Let's Automate This Process</a>
+      </div>
+    </div>
+    <p class="text-xs text-slate-600 text-center mt-5 fade-up">"These estimates are illustrative and actual results depend on workflow complexity, implementation quality, and business conditions."</p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<!-- CONTACT FORM AND N8N WEBHOOK CONFIGURATION — UPDATE WEBHOOK URL HERE -->
+<!-- The webhook URL constant (N8N_WEBHOOK_URL) is defined in the config script in <head>. -->
+<section id="contact" class="py-20 sm:py-28 px-4 sm:px-6 bg-slate-900/30 border-t border-slate-800/60">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight text-center mb-3 fade-up">Have a Repetitive Process? Let's Automate It.</h2>
+    <p class="text-slate-400 text-center max-w-xl mx-auto mb-12 fade-up">Tell me what you're doing manually today, and I'll help identify where AI and automation can make the biggest impact.</p>
+
+    <form class="fade-up bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-5" @submit.prevent="submitForm" novalidate>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="f-name" class="block text-sm font-semibold text-white mb-1.5">Name <span class="text-emerald-400" aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" x-model="form.name" required autocomplete="name"
+            class="w-full bg-slate-950/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-emerald-500 focus:outline-none transition-colors"
+            placeholder="Your name" :aria-invalid="!!errors.name" :aria-describedby="errors.name ? 'err-name' : null">
+          <p id="err-name" class="text-xs text-red-400 mt-1" x-show="errors.name" x-text="errors.name" x-cloak role="alert"></p>
+        </div>
+        <div>
+          <label for="f-email" class="block text-sm font-semibold text-white mb-1.5">Email <span class="text-emerald-400" aria-hidden="true">*</span></label>
+          <input id="f-email" name="email" type="email" x-model="form.email" required autocomplete="email"
+            class="w-full bg-slate-950/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-emerald-500 focus:outline-none transition-colors"
+            placeholder="you@company.com" :aria-invalid="!!errors.email" :aria-describedby="errors.email ? 'err-email' : null">
+          <p id="err-email" class="text-xs text-red-400 mt-1" x-show="errors.email" x-text="errors.email" x-cloak role="alert"></p>
+        </div>
+      </div>
+      <div>
+        <label for="f-type" class="block text-sm font-semibold text-white mb-1.5">Project Type <span class="text-emerald-400" aria-hidden="true">*</span></label>
+        <select id="f-type" name="project_type" x-model="form.project_type" required
+          class="w-full bg-slate-950/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:outline-none transition-colors"
+          :aria-invalid="!!errors.project_type" :aria-describedby="errors.project_type ? 'err-type' : null">
+          <option value="" disabled>Select a project type…</option>
+          <option>Custom n8n Workflow</option>
+          <option>AI Agent / Chatbot</option>
+          <option>Web Scraping / Data Pipeline</option>
+          <option>API / SaaS Integration</option>
+          <option>RAG / Knowledge Base</option>
+          <option>General Consulting</option>
+        </select>
+        <p id="err-type" class="text-xs text-red-400 mt-1" x-show="errors.project_type" x-text="errors.project_type" x-cloak role="alert"></p>
+      </div>
+      <div>
+        <label for="f-message" class="block text-sm font-semibold text-white mb-1.5">Message <span class="text-emerald-400" aria-hidden="true">*</span></label>
+        <textarea id="f-message" name="message" rows="5" x-model="form.message" required
+          class="w-full bg-slate-950/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-emerald-500 focus:outline-none transition-colors resize-y"
+          placeholder="Describe the manual process you'd like to automate…" :aria-invalid="!!errors.message" :aria-describedby="errors.message ? 'err-message' : null"></textarea>
+        <p id="err-message" class="text-xs text-red-400 mt-1" x-show="errors.message" x-text="errors.message" x-cloak role="alert"></p>
+      </div>
+
+      <div aria-live="polite">
+        <p class="text-sm text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 rounded-xl px-4 py-3" x-show="formState === 'success'" x-cloak>
+          <i class="fa-solid fa-circle-check mr-2" aria-hidden="true"></i>Thanks! Your project request has been received.
+        </p>
+        <p class="text-sm text-red-300 bg-red-500/10 border border-red-500/25 rounded-xl px-4 py-3" x-show="formState === 'error'" x-cloak>
+          <i class="fa-solid fa-circle-exclamation mr-2" aria-hidden="true"></i>Something went wrong. Please try again or contact me directly.
+        </p>
+        <p class="text-sm text-cyan-300 bg-cyan-500/10 border border-cyan-500/25 rounded-xl px-4 py-3" x-show="formState === 'unconfigured'" x-cloak>
+          <i class="fa-solid fa-gear mr-2" aria-hidden="true"></i>The contact form isn't connected yet. Please set <code class="font-mono">N8N_WEBHOOK_URL</code> in the site configuration, or reach me directly by email.
+        </p>
+      </div>
+
+      <button type="submit" class="grad-btn w-full text-slate-950 font-semibold px-6 py-3.5 rounded-xl text-sm disabled:opacity-60 disabled:cursor-not-allowed" :disabled="formState === 'sending'">
+        <span x-show="formState !== 'sending'">Send Project Request</span>
+        <span x-show="formState === 'sending'" x-cloak><i class="fa-solid fa-spinner fa-spin mr-2" aria-hidden="true"></i>Sending...</span>
+      </button>
+    </form>
+
+    <!-- BOOKING / CALENDLY CONFIGURATION — UPDATE BOOKING URL HERE -->
+    <!-- The booking URL (calendlyUrl) is defined in the config script in <head>. -->
+    <div class="text-center mt-10 fade-up" x-show="isConfigured(cfg.calendlyUrl)" x-cloak>
+      <p class="text-slate-400 mb-4">Prefer a quick conversation?</p>
+      <a :href="cfg.calendlyUrl" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-slate-700 hover:border-emerald-500/50 bg-slate-900/50 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors">
+        <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book a Discovery Call
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<!-- FOOTER AND SOCIAL LINKS — UPDATE THESE LINKS -->
+<footer class="border-t border-slate-800 py-12 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+    <div class="text-center md:text-left">
+      <p class="font-bold text-white text-lg" x-text="cfg.name">[YOUR NAME]</p>
+      <p class="text-sm text-emerald-400 font-semibold mb-2">AI Automation Specialist</p>
+      <p class="text-sm text-slate-500 max-w-sm">"Building intelligent automation systems that turn repetitive work into scalable workflows."</p>
+    </div>
+    <nav aria-label="Social links">
+      <ul class="flex items-center gap-4">
+        <li><a href="[YOUR GITHUB URL]" target="_blank" rel="noopener" aria-label="GitHub profile" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-brands fa-github text-lg" aria-hidden="true"></i></a></li>
+        <li><a href="[YOUR LINKEDIN URL]" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i></a></li>
+        <li><a href="[YOUR X URL]" target="_blank" rel="noopener" aria-label="X (Twitter) profile" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-brands fa-x-twitter text-lg" aria-hidden="true"></i></a></li>
+        <li><a href="mailto:[YOUR EMAIL]" aria-label="Send email" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="text-center text-xs text-slate-600 mt-10">© 2026 <span x-text="cfg.name">[YOUR NAME]</span>. All rights reserved.</p>
+</footer>
+
+<script>
+function siteApp() {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  // Simple JSON syntax highlighter for the illustrative workflow definitions.
+  const hl = obj => esc(JSON.stringify(obj, null, 2))
+    .replace(/(&quot;[^&]*?&quot;)(\s*:)/g, '<span class="text-cyan-300">$1</span>$2')
+    .replace(/:\s*(&quot;[^&]*?&quot;)/g, ': <span class="text-emerald-300">$1</span>');
+
+  return {
+    cfg: window.SITE_CONFIG,
+    scrolled: false,
+    modal: null,
+    roi: { hours: 10, rate: 50, eff: 70 },
+    form: { name: '', email: '', project_type: '', message: '' },
+    errors: {},
+    formState: 'idle',
+
+    techStack: [
+      { name: 'Automation', items: [
+        { name: 'n8n', desc: 'Workflow orchestration platform', icon: 'fa-solid fa-circle-nodes' },
+        { name: 'Webhooks', desc: 'Event-driven triggers', icon: 'fa-solid fa-tower-broadcast' },
+        { name: 'REST APIs', desc: 'System-to-system communication', icon: 'fa-solid fa-plug' },
+        { name: 'OAuth', desc: 'Secure service authentication', icon: 'fa-solid fa-key' },
+        { name: 'JSON', desc: 'Structured data exchange', icon: 'fa-solid fa-code' }
+      ]},
+      { name: 'Programming', items: [
+        { name: 'Python', desc: 'Scraping, data, and AI logic', icon: 'fa-brands fa-python' },
+        { name: 'JavaScript', desc: 'Custom nodes and web logic', icon: 'fa-brands fa-js' },
+        { name: 'FastAPI', desc: 'High-performance API services', icon: 'fa-solid fa-bolt' }
+      ]},
+      { name: 'AI & LLMs', items: [
+        { name: 'OpenAI API', desc: 'GPT models for automation', icon: 'fa-solid fa-brain' },
+        { name: 'Anthropic Claude', desc: 'Reasoning and analysis tasks', icon: 'fa-solid fa-comment-dots' },
+        { name: 'LLM APIs', desc: 'Model-agnostic integrations', icon: 'fa-solid fa-microchip' },
+        { name: 'AI Agents', desc: 'Tool-using autonomous systems', icon: 'fa-solid fa-robot' }
+      ]},
+      { name: 'Data & Knowledge', items: [
+        { name: 'Pinecone', desc: 'Managed vector database', icon: 'fa-solid fa-database' },
+        { name: 'Qdrant', desc: 'Open-source vector search', icon: 'fa-solid fa-magnifying-glass' },
+        { name: 'Vector Databases', desc: 'Semantic similarity storage', icon: 'fa-solid fa-cubes' },
+        { name: 'RAG', desc: 'Retrieval-augmented generation', icon: 'fa-solid fa-book-open' }
+      ]},
+      { name: 'Cloud & Infrastructure', items: [
+        { name: 'AWS', desc: 'Cloud hosting and services', icon: 'fa-brands fa-aws' },
+        { name: 'Cloud Services', desc: 'Managed infrastructure', icon: 'fa-solid fa-cloud' },
+        { name: 'Docker', desc: 'Containerized deployment', icon: 'fa-brands fa-docker' }
+      ]},
+      { name: 'Business Integrations', items: [
+        { name: 'Gmail', desc: 'Email automation', icon: 'fa-solid fa-envelope' },
+        { name: 'Slack', desc: 'Team notifications and bots', icon: 'fa-brands fa-slack' },
+        { name: 'Google Sheets', desc: 'Lightweight data operations', icon: 'fa-solid fa-table' },
+        { name: 'Notion', desc: 'Knowledge base integration', icon: 'fa-solid fa-note-sticky' },
+        { name: 'CRMs', desc: 'Sales pipeline automation', icon: 'fa-solid fa-address-book' }
+      ]}
+    ],
+
+    caseStudies: [
+      {
+        id: 1, label: 'Concept Project', title: 'Autonomous AI Customer Support Agent',
+        problem: 'Support requests require manual classification and repetitive responses.',
+        solution: 'An AI workflow receives support requests, classifies intent, retrieves relevant knowledge, generates responses, and escalates complex cases.',
+        architecture: 'Incoming Email → Webhook / Trigger → LLM Intent Classifier → Vector Knowledge Search → AI Response → Human Approval → Gmail Reply',
+        steps: ['Incoming email hits an n8n webhook trigger', 'An LLM classifies the request intent and urgency', 'Relevant knowledge is retrieved via vector search', 'The AI drafts a contextual response', 'Complex cases are escalated; standard cases go to human approval', 'The approved reply is sent via Gmail'],
+        stack: ['n8n', 'OpenAI', 'Vector Search', 'Gmail'],
+        jsonHtml: hl({ trigger: 'webhook', nodes: [ { type: 'classifier', model: 'LLM' }, { type: 'vector_search', database: 'Pinecone' }, { type: 'response_generator', model: 'LLM' }, { type: 'approval', mode: 'human_in_the_loop' }, { type: 'notification', service: 'Gmail' } ] }),
+        breakdown: 'This concept design keeps a human in the loop for quality control while automating the repetitive parts: reading, classifying, researching, and drafting. Escalation rules ensure complex or sensitive requests always reach a person. Designed to reduce repetitive support handling — actual outcomes depend on implementation.'
+      },
+      {
+        id: 2, label: 'Automation Prototype', title: 'Automated B2B Lead Enrichment & Data Pipeline',
+        problem: 'Sales teams spend time manually collecting and organizing lead information.',
+        solution: 'A workflow collects leads, enriches data, validates information, structures records, and sends qualified leads to the appropriate channel.',
+        architecture: 'Lead Source → Python Scraper → Data Cleaning → Enrichment → Lead Qualification → Google Sheets → Slack Alert',
+        steps: ['Leads are collected from configured sources', 'A Python scraper gathers public company data', 'Records are cleaned and de-duplicated', 'Data is enriched with additional fields', 'Leads are scored against qualification rules', 'Structured records land in Google Sheets', 'Qualified leads trigger a Slack alert'],
+        stack: ['Python', 'n8n', 'Slack', 'Google Sheets'],
+        jsonHtml: hl({ trigger: 'schedule', nodes: [ { type: 'scraper', runtime: 'Python' }, { type: 'data_cleaning', method: 'dedupe_validate' }, { type: 'enrichment', source: 'public_data' }, { type: 'qualification', method: 'rules_engine' }, { type: 'storage', service: 'Google Sheets' }, { type: 'notification', service: 'Slack' } ] }),
+        breakdown: 'This prototype demonstrates a full lead pipeline: collection, cleaning, enrichment, qualification, storage, and alerting. Each stage is modular so sources, scoring rules, and destinations can be swapped per business. Designed to automate repetitive lead research — no specific performance results are claimed.'
+      },
+      {
+        id: 3, label: 'Proof of Concept', title: 'Enterprise RAG Knowledge Base Sync',
+        problem: 'Company knowledge becomes outdated across multiple systems.',
+        solution: 'A synchronization pipeline retrieves updated documentation, processes content, generates embeddings, and updates a vector database for AI retrieval.',
+        architecture: 'Notion → API Sync → Document Processing → Embedding Generation → Pinecone → RAG Retrieval → AI Assistant',
+        steps: ['Updated pages are pulled from Notion via API', 'Documents are chunked and processed', 'Embeddings are generated for each chunk', 'Vectors are upserted into Pinecone', 'A RAG layer retrieves relevant context at query time', 'The AI assistant answers from current knowledge'],
+        stack: ['FastAPI', 'Pinecone', 'Notion API', 'LLM'],
+        jsonHtml: hl({ trigger: 'webhook', nodes: [ { type: 'api_sync', source: 'Notion' }, { type: 'document_processing', method: 'chunking' }, { type: 'embedding', model: 'LLM' }, { type: 'vector_search', database: 'Pinecone' }, { type: 'rag_retrieval', service: 'FastAPI' } ] }),
+        breakdown: 'This proof of concept keeps an AI knowledge system continuously in sync with the source of truth. Incremental syncs process only changed documents, keeping embedding costs low and retrieval quality high. Designed for continuously updated AI knowledge systems — outcomes vary by content and setup.'
+      }
+    ],
+
+    init() {
+      // Nav scroll state
+      const onScroll = () => { this.scrolled = window.scrollY > 24; };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      // Section fade-in on scroll (respects prefers-reduced-motion via CSS)
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+      } else {
+        document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+      }
+    },
+
+    isConfigured(v) { return !!v && !v.includes('[') && v.trim() !== ''; },
+
+    openModal(id) { this.modal = id; document.documentElement.style.overflow = 'hidden'; },
+    closeModal() { if (this.modal !== null) { this.modal = null; document.documentElement.style.overflow = ''; } },
+
+    // ROI calculations
+    roiWeeklyHours() { return this.roi.hours * (this.roi.eff / 100); },
+    roiAnnualHours() { return this.roi.hours * 52 * (this.roi.eff / 100); },
+    roiAnnualSavings() { return this.roiAnnualHours() * this.roi.rate; },
+    fmtCurrency(n) { return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n); },
+
+    // Contact form
+    validate() {
+      this.errors = {};
+      if (!this.form.name.trim()) this.errors.name = 'Please enter your name.';
+      if (!this.form.email.trim()) this.errors.email = 'Please enter your email address.';
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email.trim())) this.errors.email = 'Please enter a valid email address.';
+      if (!this.form.project_type) this.errors.project_type = 'Please select a project type.';
+      if (!this.form.message.trim()) this.errors.message = 'Please describe the process you want to automate.';
+      return Object.keys(this.errors).length === 0;
+    },
+
+    async submitForm() {
+      if (this.formState === 'sending') return; // prevent duplicate submissions
+      if (!this.validate()) { this.formState = 'idle'; return; }
+      const url = (window.N8N_WEBHOOK_URL || '').trim();
+      if (!url) { this.formState = 'unconfigured'; return; } // never fetch an empty URL
+      this.formState = 'sending';
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: this.form.name.trim(),
+            email: this.form.email.trim(),
+            project_type: this.form.project_type,
+            message: this.form.message.trim(),
+            submitted_at: new Date().toISOString()
+          })
+        });
+        if (!res.ok) throw new Error('Request failed');
+        this.formState = 'success';
+        this.form = { name: '', email: '', project_type: '', message: '' };
+      } catch (e) {
+        this.formState = 'error';
+      }
+    }
+  };
+}
+</script>
 
 </body>
 </html>
