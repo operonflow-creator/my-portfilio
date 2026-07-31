@@ -645,11 +645,13 @@
     </div>
     <nav aria-label="Social links">
       <ul class="flex items-center gap-4">
+        <!--
         <li><a href="[YOUR GITHUB URL]" target="_blank" rel="noopener" aria-label="GitHub profile" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-brands fa-github text-lg" aria-hidden="true"></i></a></li>
         <li><a href="[YOUR LINKEDIN URL]" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i></a></li>
         <li><a href="[YOUR X URL]" target="_blank" rel="noopener" aria-label="X (Twitter) profile" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-brands fa-x-twitter text-lg" aria-hidden="true"></i></a></li>
+        -->
         <li x-show="isConfigured(cfg.fiverrUrl)" x-cloak><a :href="cfg.fiverrUrl" target="_blank" rel="noopener" aria-label="Fiverr profile" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-solid fa-briefcase text-lg" aria-hidden="true"></i></a></li>
-        <li><a href="mailto:[YOUR EMAIL]" aria-label="Send email" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i></a></li>
+        <li><a href="mailto:operonflow@gmail.com" aria-label="Send email" class="w-11 h-11 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"><i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i></a></li>
       </ul>
     </nav>
   </div>
